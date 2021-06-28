@@ -9,4 +9,5 @@ window.onload = async function() {
 	console.log(jsyaml.load(yamlText));
 	console.log(converter.makeHtml(markdownText));
 	document.getElementById("content").innerHTML = converter.makeHtml(markdownText);
+	console.log(await ajaxRequest("packs"));
 }
