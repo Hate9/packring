@@ -3,7 +3,7 @@ const yamlBlockPattern = /^---[\r\n]*(.*)^---/gsm,
 	markdownBlockPattern = /\n---(.*(?!---).*)$/gs;
 
 window.onload = async function() {
-}	var packs = (await ajaxRequest(".packs", true, "text/plain")).split("\n");
+	var packs = (await ajaxRequest(".packs", true, "text/plain")).split("\n");
 	for (i = 0; i < packs.length; i++) {
 		console.log("found pack "+packs[i]);
 		let text = await ajaxRequest("packs/"+packs[i]);
@@ -15,3 +15,4 @@ window.onload = async function() {
 		div.innerHTML = "<h1>"+yaml.Title+"</h1>";
 		document.getElementById("content").appendChild(div);
 	};
+}
