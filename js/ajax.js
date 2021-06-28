@@ -17,6 +17,13 @@ function ajaxRequest(url, cache = true, formData = null, headers = null) {
 			formData = tempFormData;
 		}
 		
+		xhr.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				resolve(this.responseText);
+			}
+		};
+		xhr.open(formData == null ? "GET" : "POST", url, true);
+		
 		if (!cache) {
 			xhr.setRequestHeader("Cache-Control", "no-cache, no-store, max-age=0, must-revalidate");
 			xhr.setRequestHeader("Pragma", "no-cache");
@@ -28,13 +35,6 @@ function ajaxRequest(url, cache = true, formData = null, headers = null) {
 				xhr.setRequestHeader(key, headers[key]);
 			}
 		}
-		
-		xhr.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				resolve(this.responseText);
-			}
-		};
-		xhr.open(formData == null ? "GET" : "POST", url, true);
 		xhr.send(formData);
 	});
 }
