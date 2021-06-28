@@ -9,7 +9,7 @@ function ajaxRequest(url, cache = true, formData = null, headers = null) {
 	return new Promise(resolve => {
 		let xhr = new XMLHttpRequest();
 		
-		if (!(formData instanceof FormData)) {
+		if (!(formData instanceof FormData) && formData != null) {
 			let tempFormData = new FormData();
 			for (let key in formData) {
 				tempFormData.append(key, formData[key]);
