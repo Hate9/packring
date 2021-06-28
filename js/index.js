@@ -1,15 +1,11 @@
 var converter = new showdown.Converter();
-const yamlBlockPattern = /^---[\r\n]*(.*)^---/gsm,
-	markdownBlockPattern = /\n---(.*(?!---).*)$/gs;
 
 window.onload = async function() {
 	var packs = (await ajaxRequest(".packs", true, "text/plain")).split("\n");
 	for (i = 0; i < packs.length; i++) {
-		console.log("found pack "+packs[i]);
 		let text = await ajaxRequest("packs/"+packs[i]);
-		let yaml = jsyaml.load(yamlBlockPattern.exec(text)[1]);
-		console.log(yaml);
-		let markdown = converter.makeHtml(markdownBlockPattern.exec(text)[1]);
+		let yaml = jsyaml.load(/^---[\r\n]*(.*)^---/gsm.exec(text)[1]);
+		let markdown = converter.makeHtml(/\n---(.*(?!---).*)$/gs.exec(text)[1]);
 		
 		insertDOMElement("div", "<h1>"+yaml.Title+"</h1>", document.getElementById("content"));
 	};
