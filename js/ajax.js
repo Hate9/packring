@@ -2,12 +2,15 @@
   parameters:
   url: the url to which to send the request
   cache: a boolean specifying whether or not to cache the requested data. if set to false, predefined request headers will be sent to prevent caching
+  responseType: a string representing the expected response type of the resource
   formData: either the FormData object or an associative array which will be converted to a FormData object, which will be sent
   headers: an associative array representing the keys and values of request headers to be sent
 */
-function ajaxRequest(url, cache = true, formData = null, headers = null) {
+function ajaxRequest(url, cache = true, responseType = "", formData = null, headers = null) {
 	return new Promise(resolve => {
 		let xhr = new XMLHttpRequest();
+		
+		xhr.responseType = responseType;
 		
 		if (!(formData instanceof FormData) && formData != null) {
 			let tempFormData = new FormData();
