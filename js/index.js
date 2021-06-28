@@ -11,8 +11,6 @@ window.onload = async function() {
 		console.log(yaml);
 		let markdown = converter.makeHtml(markdownBlockPattern.exec(text)[1]);
 		
-		let div = document.createElement("div");
-		div.innerHTML = "<h1>"+yaml.Title+"</h1>";
-		document.getElementById("content").appendChild(div);
+		insertDOMElement("div", "<h1>"+yaml.Title+"</h1>", document.getElementById("content"));
 	};
 }
