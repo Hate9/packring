@@ -1,8 +1,10 @@
 ---
-Title: WitchCraft
-Author: Hate9
-CSS: witchcraft.css
-URL: https://www.curseforge.com/minecraft/modpacks/witchcraft-dimensions
+Title: 'World of Dragons'
+Author: 'Kreezxil'
+Description: 'a modpack'
+Image: 'wod.png'
+CSS: 'wod.css'
+URL: 'https://www.curseforge.com/minecraft/modpacks/world-of-dragons'
 ---
-# WitchCraft
-**WitchCraft** is a modpack. 
+# World of Dragons
+**World of Dragons** is a modpack. 
