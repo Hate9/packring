@@ -1,11 +1,12 @@
 /*ajaxRequest: sends a simple asynchronous ajax request and returns the response
   parameters:
   url: the url to which to send the request
-  formData: either the FormData object or an associative array which will be converted to a FormData object, which will be sent
   cache: a boolean specifying whether or not to cache the requested data. if set to false, predefined request headers will be sent to prevent caching
+  async: a boolean specifying whether or not the request will be made synchronously or asynchronously
+  formData: either the FormData object or an associative array which will be converted to a FormData object, which will be sent
   headers: an associative array representing the keys and values of request headers to be sent
 */
-function ajaxRequest(url, formData = null, cache = true, headers = null) {
+function ajaxRequest(url, cache = true, async = true, formData = null, headers = null) {
 	return new Promise(resolve => {
 		let xhr = new XMLHttpRequest();
 		
@@ -34,7 +35,7 @@ function ajaxRequest(url, formData = null, cache = true, headers = null) {
 				resolve(this.responseText);
 			}
 		};
-		xhr.open(formData == null ? "GET" : "POST", url, true);
+		xhr.open(formData == null ? "GET" : "POST", url, async);
 		xhr.send(formData);
 	});
 }
