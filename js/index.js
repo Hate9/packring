@@ -1,7 +1,7 @@
 var converter = new showdown.Converter();
 
 window.onload = async function() {
-	var text = await ajaxRequest("packs/witchcraft.md");
+	var text = await ajaxRequest("packs/witchcraft.md", true, null, { "Referer": window.location.href });
 	const yamlBlockPattern = /^---[\r\n]*(.*)^---/gsm;
 	const markdownBlockPattern = /\n---(.*(?!---).*)$/gs;
 	var yamlText = yamlBlockPattern.exec(text)[1];
