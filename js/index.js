@@ -1,13 +1,17 @@
 var converter = new showdown.Converter();
+const yamlBlockPattern = /^---[\r\n]*(.*)^---/gsm,
+	markdownBlockPattern = /\n---(.*(?!---).*)$/gs;
 
 window.onload = async function() {
-	var text = await ajaxRequest("packs/witchcraft.md");
-	const yamlBlockPattern = /^---[\r\n]*(.*)^---/gsm;
-	const markdownBlockPattern = /\n---(.*(?!---).*)$/gs;
-	var yamlText = yamlBlockPattern.exec(text)[1];
-	var markdownText = markdownBlockPattern.exec(text)[1];
-	console.log(jsyaml.load(yamlText));
-	console.log(converter.makeHtml(markdownText));
-	document.getElementById("content").innerHTML = converter.makeHtml(markdownText);
-	console.log(await ajaxRequest("packs"));
-}
+}	var packs = (await ajaxRequest(".packs", true, "text/plain")).split("\n");
+	for (i = 0; i < packs.length; i++) {
+		console.log("found pack "+packs[i]);
+		let text = await ajaxRequest("packs/"+packs[i]);
+		let yaml = jsyaml.load(yamlBlockPattern.exec(text)[1]);
+		console.log(yaml);
+		let markdown = converter.makeHtml(markdownBlockPattern.exec(text)[1]);
+		
+		let div = document.createElement("div");
+		div.innerHTML = "<h1>"+yaml.Title+"</h1>";
+		document.getElementById("content").appendChild(div);
+	};
