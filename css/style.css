@@ -1,0 +1,45 @@
+body {
+	background-color: #0c131d;
+	background: url("/res/triangles.png");
+	background-size: 259.75px 150px;
+}
+
+body, .body {
+	color: #f0e7eb;
+	font-family: Montserrat, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, .header {
+	color: #f0e7eb;
+	font-family: "Open Sans", sans-serif;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.packimage {
+	object-fit: cover;
+	width: 300px;
+	height: 250px;
+	border-radius: 10px;
+}
+
+#content {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: center;
+}
+#packlist {
+	display: flex;
+	width: 100%;
+	height: 50%;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-content: space-around;
+}
