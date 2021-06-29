@@ -7,6 +7,7 @@ window.onload = async function() {
 		let yaml = jsyaml.load(/^---[\r\n]*(.*)^---/gsm.exec(text)[1]);
 		let markdown = converter.makeHtml(/\n---(.*(?!---).*)$/gs.exec(text)[1]);
 		
-		insertDOMElement("div", "<h1>"+yaml.Title+"</h1>", document.getElementById("content"));
+		insertDOMElement("a", "<img class=\"packimage\" src=\"res/"+yaml.Image+"\" alt=\""+yaml.Title+"\" title=\""+yaml.Title+"\"></img>", document.getElementById("packlist"))
+			.setAttribute("href", "modpack?"+packs[i].replace(/\.[^/.]+$/, ""));
 	};
 }
