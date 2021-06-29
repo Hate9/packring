@@ -1,9 +1,9 @@
 window.onload = async function() {
-	var packs = (await ajaxRequest(".packs", true, "text/plain")).split("\n");
+	var packs = (await ajaxRequest("/packring/.packs", true, "text/plain")).split("\n");
 	for (i = 0; i < packs.length; i++) {
 		let yaml = jsyaml.load(
 			/^---[\r\n]*(.*)^---/gsm.exec(
-				await ajaxRequest("/packs/"+packs[i])
+				await ajaxRequest("/packring/packs/"+packs[i])
 			)[1]
 		);
 		
