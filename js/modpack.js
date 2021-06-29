@@ -1,5 +1,5 @@
+var converter = new showdown.Converter();
 window.onload = async function() {
-	var converter = new showdown.Converter();
 	let text = await ajaxRequest("/packs/"+window.location.search.replace("?", "")+".md");
 	let yaml = jsyaml.load(
 		/^---[\r\n]*(.*)^---/gsm.exec(
