@@ -8,4 +8,5 @@ function insertDOMElement(elementType, content, parent = document.body) {
 	let element = document.createElement(elementType);
 	element.innerHTML = content;
 	parent.appendChild(element);
+	return element;
 }
