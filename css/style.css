@@ -89,7 +89,7 @@ a:active > * {
 
 @media (orientation: portrait) {
 	#content, #content.wide {
-		width: calc(100% - 10px);
+		width: calc(100% - 20px);
 	}
 	padding: {
 		height: 0;
