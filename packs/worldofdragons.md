@@ -1,7 +1,7 @@
 ---
 Title: 'World of Dragons'
 Author: 'Kreezxil'
-Description: 'a modpack'
+Description: 'Dragons, Magic, Technologies, Quests, Minecolonies, Mine & Slash'
 Image: 'wod.png'
 CSS: 'wod.css'
 URL: 'https://www.curseforge.com/minecraft/modpacks/world-of-dragons'
