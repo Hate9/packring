@@ -12,6 +12,7 @@ window.onload = async function() {
 		
 		let link = insertDOMElement("a", "", div);
 		link.setAttribute("href", "modpack?"+packs[i].replace(/\.[^/.]+$/, ""));
+		link.setAttribute("class", "nodeco");
 		
 		let img = insertDOMElement("img", "", link);
 		img.setAttribute("class", "packimage");
@@ -19,6 +20,6 @@ window.onload = async function() {
 		img.setAttribute("alt", yaml.Title);
 		img.setAttribute("title", yaml.Title);
 		
-		insertDOMElement("p", yaml.Description, div);
+		insertDOMElement("p", yaml.Description, link);
 	};
 }

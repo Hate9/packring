@@ -51,6 +51,10 @@ a:active > * {
 	1px 1px 2px white;
 	color: white;
 }
+a.nodeco, a.nodeco > *, a > *.nodeco {
+	text-shadow: none;
+	color: inherit;
+}
 
 .packimage {
 	object-fit: cover;
