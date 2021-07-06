@@ -7,7 +7,18 @@ window.onload = async function() {
 			)[1]
 		);
 		
-		insertDOMElement("a", "<img class=\"packimage\" src=\"res/"+yaml.Image+"\" alt=\""+yaml.Title+"\" title=\""+yaml.Title+"\"></img>", document.getElementById("packlist"))
-			.setAttribute("href", "modpack?"+packs[i].replace(/\.[^/.]+$/, ""));
+		let div = insertDOMElement("div", "", document.getElementById("packlist"));
+		div.setAttribute("class", "packicon");
+		
+		let link = insertDOMElement("a", "", div);
+		link.setAttribute("href", "modpack?"+packs[i].replace(/\.[^/.]+$/, ""));
+		
+		let img = insertDOMElement("img", "", link);
+		img.setAttribute("class", "packimage");
+		img.setAttribute("src", "res/"+yaml.Image);
+		img.setAttribute("alt", yaml.Title);
+		img.setAttribute("title", yaml.Title);
+		
+		insertDOMElement("p", yaml.Description, div);
 	};
 }
