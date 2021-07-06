@@ -95,6 +95,18 @@ a:active > * {
 #packdescription img {
 	width: 100%;
 }
+#packdescription {
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.025);
+	padding: 10px;
+	box-sizing: border-box;
+}
+#packdescription > *:first-child {
+	margin-top: 0;
+}
+#packdescription > *:last-child {
+	margin-bottom: 0;
+}
 
 @media (orientation: portrait) {
 	#content, #content.wide {
