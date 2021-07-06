@@ -77,7 +77,6 @@ a:active > * {
 #packlist {
 	display: flex;
 	width: 100%;
-	height: 50%;
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-content: space-around;
@@ -93,9 +92,6 @@ a:active > * {
 	}
 	padding: {
 		height: 0;
-	}
-	#packlist {
-		height: initial;
 	}
 }
 
