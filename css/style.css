@@ -98,3 +98,22 @@ a:active > * {
 		height: initial;
 	}
 }
+
+#footer {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding-top: 4px;
+}
+
+#footer > * {
+	margin-left: 3px;
+	margin-right: 3px;
+	margin-bottom: 2px;
+	text-shadow:
+	-2px -2px 2px black,  
+	2px -2px 2px black,
+	-2px 2px 2px black,
+	2px 2px 2px black;
+}
