@@ -3,7 +3,6 @@ Title: 'WitchCraft'
 Author: 'Hate9'
 Description: 'A freeform magic-focused pack with a variety of custom content'
 Image: 'witchcraft.png'
-CSS: 'witchcraft.css'
 URL: 'https://www.curseforge.com/minecraft/modpacks/witchcraft-dimensions'
 ---
 ![WitchCraft](https://media.forgecdn.net/attachments/313/616/title.png)
