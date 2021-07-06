@@ -1,23 +1,55 @@
-body {
-	background-color: #0c131d;
-	background: url("/packring/res/bg.png");
-	background-size: 259.75px 150px;
-}
-
-body, .body {
-	color: #f0e7eb;
-	font-family: Montserrat, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6, .header {
-	color: #f0e7eb;
-	font-family: "Open Sans", sans-serif;
-}
-
 html, body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
+}
+
+body {
+	background-color: #0c131d;
+	background: url("/packring/res/bg.png");
+	background-size: 259.75px 150px;
+	color: #f0e7eb;
+	font-family: Montserrat, sans-serif;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6, .headertext {
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	margin: 0;
+	font-family: "Open Sans", sans-serif;
+	text-shadow:
+	-1px -1px 2px black,  
+	1px -1px 2px black,
+	-1px 1px 2px black,
+	1px 1px 2px black;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+a:hover > * {
+	text-shadow:
+	-1px -1px 0 white,  
+	1px -1px 0 white,
+	-1px 1px 0 white,
+	1px 1px 0 white;
+	color: black;
+}
+a:active > * {
+	text-shadow:
+	-1px -1px 2px white,  
+	1px -1px 2px white,
+	-1px 1px 2px white,
+	1px 1px 2px white;
+	color: white;
 }
 
 .packimage {
@@ -25,16 +57,23 @@ html, body {
 	width: 300px;
 	height: 250px;
 	border-radius: 10px;
+	margin: 5px;
+}
+
+#header {
+	margin-left: 20px;
+	position: absolute;
 }
 
 #content {
-	display: flex;
-	width: 100%;
+	margin: 0 auto;
+	width: 50%;
 	height: 100%;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-content: center;
 }
+#content.wide {
+	width: 75%;
+}
+
 #packlist {
 	display: flex;
 	width: 100%;
@@ -42,4 +81,20 @@ html, body {
 	flex-wrap: wrap;
 	justify-content: space-around;
 	align-content: space-around;
+}
+
+#packdescription img {
+	width: 100%;
+}
+
+@media (orientation: portrait) {
+	#content, #content.wide {
+		width: calc(100% - 10px);
+	}
+	padding: {
+		height: 0;
+	}
+	#packlist {
+		height: initial;
+	}
 }
