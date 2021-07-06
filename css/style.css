@@ -72,6 +72,11 @@ a.nodeco, a.nodeco > *, a > *.nodeco {
 }
 .packicon p {
 	margin: 10px;
+	text-shadow:
+	-2px -2px 2px black,  
+	2px -2px 2px black,
+	-2px 2px 2px black,
+	2px 2px 2px black;
 }
 
 #header {
@@ -104,6 +109,11 @@ a.nodeco, a.nodeco > *, a > *.nodeco {
 	background-color: rgba(255, 255, 255, 0.025);
 	padding: 10px;
 	box-sizing: border-box;
+	text-shadow:
+	-2px -2px 2px black,  
+	2px -2px 2px black,
+	-2px 2px 2px black,
+	2px 2px 2px black;
 }
 #packdescription > *:first-child {
 	margin-top: 0;
