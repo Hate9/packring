@@ -16,10 +16,10 @@ The pack MarkDown files must have additional metadata stored as YAML data at the
 ```
 ---
 Title: 'This text will be used for the title (hover) text of the entry''s icon, as well as the header and page title for the entry''s info page'
-Author: 'This is not currently displayed anywhere on the page, but it''s good information to keep track of'
+Author: 'This is not currently displayed anywhere on the page, but it''s good information to track'
 Description: 'This text is displayed below the entry''s icon, and is listed in the entry''s info page''s metadata'
 Image: 'This is the filename (relative to the /res/ directory) of the icon to be displayed for the entry on the index page'
-URL: 'This is the URL which the info page''s header will link to.'
+URL: 'This is the URL to which the info page''s header will link.'
 ---
 ```
 
