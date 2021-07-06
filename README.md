@@ -23,3 +23,6 @@ URL: 'This is the URL to which the info page''s header will link.'
 ---
 ```
 
+
+
+This project makes use of [JS-YAML](https://github.com/nodeca/js-yaml) and [Showdown](https://github.com/showdownjs/showdown). All other code is original.
