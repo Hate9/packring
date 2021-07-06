@@ -13,6 +13,7 @@ window.onload = async function() {
 		)[1]
 	);
 	document.title = yaml.Title;
+	document.head.children.namedItem('description').content = yaml.Description;
 	var titleHyper = insertDOMElement("a", "", contentElem);
 	titleHyper.setAttribute("href", yaml.URL);
 	insertDOMElement("h1", yaml.Title, titleHyper);
